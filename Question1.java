@@ -1,46 +1,39 @@
-import java.util.*;
 import java.util.ArrayList;
 
-public class Question1{
-    //private static 
-    public static ArrayList<Integer> sieveOfEratosthenes(Integer n) {
-        ArrayList<Integer> list = new ArrayList<Integer>(20);
-        Integer p = new Integer(2);
-      
+class Question1 {
+    
+    public static ArrayList<String> reverse( ArrayList<String> myList ) {
+        //This method takes an ArrayList<String> as a parameter and returns
+        //a new ArrayList<String> in which the elements are stored in reverse
+        //order.  The original list should remain unchanged.
         
-        /*
-        // remove every composite number
-        for (int i = 0; i < 8; i++) {
-            if (list.get(i) % p == 0 ) {
-                list.remove(i);
-            }
+        ArrayList<String> reversed = new ArrayList<String>();
+        
+        for (int i = myList.size() - 1; i >= 0 ; i--) {
+            reversed.add(myList.get(i));
         }
-        
-        
-        /*
-        while(p < n) {
-            Integer current = list.get(i);
-            if (current % p == 0 && current > p) {
-                list.remove(i);
-            }
-            
-            if (current > p && current <= n) {
-                p = i;
-            }
-            
-            i++;
-        }
-        
-        */
-        System.out.println("original list: " + list);
-        
-        return list;
+        return reversed;
     }
     
-    public static void main(String[] args) {
-        System.out.println('\u000C');
-        Integer max = new Integer(20);
-        sieveOfEratosthenes(max);
-        System.out.println("updated list: " + sieveOfEratosthenes(max));
+    public static void main (String[] args) {
+        ArrayList<String> words = new ArrayList<String>();
+        words.add("Why");
+        words.add("do");
+        words.add("we");
+        words.add("fall");
+        words.add("Bruce?");
+        words.add("So");
+        words.add("we");
+        words.add("can");
+        words.add("learn");
+        words.add("to");
+        words.add("pick");
+        words.add("ourselves");
+        words.add("up");
+        System.out.println("List forwards reads: " + words);
+        System.out.println("List backward reads: " + reverse(words));
+        //System.out.println('\u000C');
     }
+    
+    
 }
